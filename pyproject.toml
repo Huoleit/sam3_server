@@ -8,10 +8,8 @@ dynamic = ["version"]
 description = "SAM3 (Segment Anything Model 3) implementation"
 readme = "README.md"
 requires-python = ">=3.8"
-license = {file = "LICENSE"}
-authors = [
-    {name = "Meta AI Research"}
-]
+license = { file = "LICENSE" }
+authors = [{ name = "Meta AI Research" }]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Science/Research",
@@ -90,7 +88,7 @@ exclude = ["build*", "scripts*", "examples*"]
 sam3 = ["assets/*.txt.gz"]
 
 [tool.setuptools.dynamic]
-version = {attr = "sam3.__version__"}
+version = { attr = "sam3.__version__" }
 
 [tool.black]
 line-length = 88
@@ -133,3 +131,10 @@ testpaths = ["tests"]
 python_files = "test_*.py"
 python_classes = "Test*"
 python_functions = "test_*"
+
+[tool.pylint]
+disable = [
+    "C0200", # Consider using enumerate instead of iterating with range and len
+    "W1203",
+    "W0718",
+]
